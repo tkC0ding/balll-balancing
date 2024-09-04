@@ -77,6 +77,8 @@ def get_limits(color):
 
 def Publisher():
 
+    x_error = 0
+    y_error = 0
     error_lists = [[], []]
     sum_error = [0, 0]   #x, y
     diff_error = [0, 0]
