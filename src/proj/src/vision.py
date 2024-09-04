@@ -16,6 +16,13 @@ y_origin_real = 0
 source = cv2.VideoCapture(2)
 source.set(cv2.CAP_PROP_FRAME_HEIGHT,h)
 source.set(cv2.CAP_PROP_FRAME_WIDTH,w)
+
+d = 5.0
+e = 7.937
+f = 4.845
+g = 8.72
+h = 12.5
+
 #camera_matrix = np.load('../../../calibrationFiles/cameraMatrix.npy')
 #dist_coefs = np.load('../../../calibrationFiles/cameraDistortion.npy')
 
@@ -26,6 +33,14 @@ source.set(cv2.CAP_PROP_FRAME_WIDTH,w)
 
     return(img_und)
 '''
+
+def calculate_a(nx, ny, nz):
+    ay = d+(e/2)*(1 - ((math.pow(nx, 2) + (3*math.pow(nz, 2)) + (3*nz))/(nz + 1 - math.pow(nx, 2))) + ((math.pow(nx,4) - (3*math.pow(nx,2)*math.pow(ny,2)))/((nz+1)*(nz+1-math.pow(nx,2)))))
+    az = h + (e*ny)
+    am = math.sqrt(math.pow(ay,2) + math.pow(az,2))
+    a_theta = math.acos(ay/am) + math.acos((math.pow(am,2)+math.pow(f,2)-math.pow(g,2))/(2*am*f))
+    return(a_theta)
+
 def get_limits(color):
     c = np.uint8([[color]])
     hsvC = cv2.cvtColor(c, cv2.COLOR_BGR2HSV)
