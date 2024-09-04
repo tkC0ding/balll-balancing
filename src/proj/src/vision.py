@@ -41,6 +41,14 @@ def calculate_a(nx, ny, nz):
     a_theta = math.acos(ay/am) + math.acos((math.pow(am,2)+math.pow(f,2)-math.pow(g,2))/(2*am*f))
     return(a_theta)
 
+def calculate_b(nx, ny, nz):
+    bx = (math.sqrt(3)/2) * ((e * (1 - ((math.pow(nx, 2) + (math.sqrt(3)*nx*ny))/(nz + 1)))) - d)
+    by = bx/math.sqrt(3)
+    bz = h - ((e/2)*((math.sqrt(3)*nx) + ny))
+    bm = math.sqrt(math.pow(bx, 2) + math.pow(by, 2) + math.pow(bz, 2))
+    b_theta = math.acos(((math.sqrt(3)*bx) + by)/(-2*bm)) + math.acos((math.pow(bm, 2) + math.pow(f, 2) - math.pow(g,2))/(2*bm*f))
+    return(b_theta)
+
 def get_limits(color):
     c = np.uint8([[color]])
     hsvC = cv2.cvtColor(c, cv2.COLOR_BGR2HSV)
