@@ -135,7 +135,11 @@ def Publisher():
             ny /= nmag
             nz = 1/nmag
 
-            message = f'x_direction : {nx} y_direction : {ny}'
+            theta_a = calculate_a(nx, ny, nz)
+            theta_b = calculate_b(nx, ny, nz)
+            theta_c = calculate_c(nx, ny, nz)
+
+            message = f'{theta_a} {theta_b} {theta_c}'
 
             #frame = cv2.putText(frame, message, (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 2, cv2.LINE_AA)
                 
