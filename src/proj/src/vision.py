@@ -87,7 +87,7 @@ def Publisher():
     kd = [0, 0]
 
     pub = rospy.Publisher('coordinates', String, queue_size=10)
-    rospy.init_node('xy_pub_node', anonymous=False)
+    rospy.init_node('angle_pub_node', anonymous=False)
     rate = rospy.Rate(50)
 
     while not rospy.is_shutdown():
