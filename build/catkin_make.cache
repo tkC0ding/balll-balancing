@@ -1,0 +1,2 @@
+proj
+-DPYTHON_EXECUTABLE=/usr/bin/python3 -DCATKIN_DEVEL_PREFIX=/home/toshan/Desktop/Proj_folder/devel -DCMAKE_INSTALL_PREFIX=/home/toshan/Desktop/Proj_folder/install -G Unix Makefiles

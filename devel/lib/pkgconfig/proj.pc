@@ -1,0 +1,8 @@
+prefix=/home/toshan/Desktop/Proj_folder/devel
+
+Name: proj
+Description: Description of proj
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
