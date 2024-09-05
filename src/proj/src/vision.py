@@ -156,6 +156,9 @@ def Publisher():
         pub.publish(message)
         rate.sleep()
 
+        if cv2.waitKey(1) & 0xFF == ord('q'): 
+            break
+
     source.release() 
     cv2.destroyAllWindows()
 
