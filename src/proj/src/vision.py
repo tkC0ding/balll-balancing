@@ -142,9 +142,9 @@ def Publisher():
             ny /= nmag
             nz = 1/nmag
 
-            theta_a = calculate_a(nx, ny, nz)
-            theta_b = calculate_b(nx, ny, nz)
-            theta_c = calculate_c(nx, ny, nz)
+            theta_a = calculate_a(nx, ny, nz) * (180/math.pi) * (80/9)
+            theta_b = calculate_b(nx, ny, nz) * (180/math.pi) * (80/9)
+            theta_c = calculate_c(nx, ny, nz) * (180/math.pi) * (80/9)
 
             message = f'{theta_a} {theta_b} {theta_c}'
 
