@@ -115,7 +115,7 @@ def Publisher():
             x_centre_ball = (x1 + x2)//2
             y_centre_ball = (y1 + y2)//2
 
-            x_centre_real = -(x_origin - x_centre_ball) / 37.795
+            x_centre_real = (x_origin - x_centre_ball) / 37.795
             y_centre_real = -(y_origin - y_centre_ball) / 37.795
 
             #frame = cv2.circle(frame, (x_origin,y_origin), radius=0, color=(0, 0, 255), thickness=5)
