@@ -35,7 +35,7 @@ h = 12.5
 '''
 
 def calculate_a(nx, ny, nz):
-    ay = d+(e/2)*(1 - ((math.pow(nx, 2) + (3*math.pow(nz, 2)) + (3*nz))/(nz + 1 - math.pow(nx, 2))) + ((math.pow(nx,4) - (3*math.pow(nx,2)*math.pow(ny,2)))/((nz+1)*(nz+1-math.pow(nx,2)))))
+    ay = d+((e/2)*(1 - ((math.pow(nx, 2) + (3*math.pow(nz, 2)) + (3*nz))/(nz + 1 - math.pow(nx, 2))) + ((math.pow(nx,4) - (3*math.pow(nx,2)*math.pow(ny,2)))/((nz+1)*(nz+1-math.pow(nx,2))))))
     az = h + (e*ny)
     am = math.sqrt(math.pow(ay,2) + math.pow(az,2))
     a_theta = math.acos(ay/am) + math.acos((math.pow(am,2)+math.pow(f,2)-math.pow(g,2))/(2*am*f))
@@ -155,7 +155,7 @@ def Publisher():
 
         pub.publish(message)
         rate.sleep()
-        
+
     source.release() 
     cv2.destroyAllWindows()
 
