@@ -77,8 +77,6 @@ def get_limits(color):
 
 def Publisher():
 
-    x_error = 0
-    y_error = 0
     error_lists = [[], []]
     sum_error = [0, 0]   #x, y
     diff_error = [0, 0]
@@ -126,8 +124,15 @@ def Publisher():
             x_error = x_origin_real - x_centre_real
             y_error = y_origin_real - y_centre_real
 
+            sum_error[0] += x_error
+            sum_error[1] += y_error
+
             error_lists[0].append(x_error)
             error_lists[1].append(y_error)
+
+            if(len(error_lists[0][0]) == 2):
+                diff_error[0] = (error_lists[0][1] - error_lists[0][0])/0.02
+                diff_error[1] = (error_lists[1][1] - error_lists[1][0])/0.02
 
             nx = -(kp[0]*x_error + ki[0]*sum_error[0] + kd[0]*diff_error[0])
             ny = -(kp[1]*y_error + ki[1]*sum_error[1] + kd[1]*diff_error[1])
@@ -147,13 +152,6 @@ def Publisher():
                 
         else:
             message = 'None'
-
-        sum_error[0] += x_error
-        sum_error[1] += y_error
-
-        if(len(error_lists[0][0]) == 2):
-            diff_error[0] = (error_lists[0][1] - error_lists[0][0])/0.02
-            diff_error[1] = (error_lists[1][1] - error_lists[1][0])/0.02
 
         pub.publish(message)
         rate.sleep()
