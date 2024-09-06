@@ -13,7 +13,7 @@ y_origin = h//2
 x_origin = w//2
 x_origin_real = 0
 y_origin_real = 0
-source = cv2.VideoCapture(2)
+source = cv2.VideoCapture(0)
 source.set(cv2.CAP_PROP_FRAME_HEIGHT,h)
 source.set(cv2.CAP_PROP_FRAME_WIDTH,w)
 
