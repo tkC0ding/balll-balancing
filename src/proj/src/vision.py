@@ -146,7 +146,7 @@ def Publisher():
             theta_b = calculate_b(nx, ny, nz) * (180/math.pi) * (80/9)
             theta_c = calculate_c(nx, ny, nz) * (180/math.pi) * (80/9)
 
-            message = f'{theta_a} {theta_b} {theta_c}'
+            message = f'{theta_a},{theta_b},{theta_c}'
 
             #frame = cv2.putText(frame, message, (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 2, cv2.LINE_AA)
                 
